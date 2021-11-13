@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "timetables-lib"
+version = "1.0.0"
+description = "Szkolny.eu Timetables Common Library"
+readme = "README.md"
+authors = ["Kuba Szczodrzyński <kuba@szczodrzynski.pl>"]
+packages = [
+    { include = "timetables/base" },
+    { include = "timetables/schemas" },
+    { include = "timetables/parser/base" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = "^1.8.2"
+aiohttp = { extras = ["speedups"], version = "^3.8.0" }
+aiofiles = "^0.7.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.10b0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
